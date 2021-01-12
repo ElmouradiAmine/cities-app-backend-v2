@@ -14,7 +14,7 @@ export class CitiesService {
   async getCities(search: string): Promise<CityResponseInterface[]> {
     const cities: City[] = await this.cityRepository.getCities(search);
     const citiesJSON = cities.map((city) => city.toJSON());
-    console.log(process.env.DATABASE_HOST);
+
     return citiesJSON;
   }
 }

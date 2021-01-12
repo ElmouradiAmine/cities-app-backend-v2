@@ -11,9 +11,9 @@ export class CityRepository extends Repository<City> {
         { search: `%${search}%` },
       );
     }
-    // query.distinctOn(['city.nomCommune']);
+    query.distinctOn(['city.nomcommune']);
     query.take(100);
-    query.orderBy('city.nomCommune', 'ASC');
+    query.orderBy('city.nomcommune', 'ASC');
 
     const cities = await query.getMany();
     return cities;
